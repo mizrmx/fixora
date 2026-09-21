@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Fixora Técnico — Guía de color</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Sora:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #F7F8F8;
+    color: #1E2B4A;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    padding: 48px 40px 100px;
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-family: 'Sora', sans-serif;
+    font-size: 30px;
+    margin-bottom: 6px;
+  }
+  h1 span { color: #F97318; }
+  .subtitle {
+    color: #6B7280;
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+
+  .screen-block {
+    margin-bottom: 56px;
+    padding-bottom: 8px;
+  }
+  .screen-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #1E2B4A;
+  }
+  .screen-num {
+    background: #1E2B4A;
+    color: #fff;
+    width: 26px; height: 26px;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    flex-shrink: 0;
+  }
+
+  .section {
+    margin-top: 22px;
+  }
+  .section-title {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9AA3B2;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    margin-bottom: 10px;
+  }
+
+  .swatch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .swatch {
+    background: #FFFFFF;
+    border: 1px solid #E8EAEF;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .swatch-color {
+    height: 52px;
+    width: 100%;
+    position: relative;
+  }
+  .swatch-color.checker {
+    background-image:
+      linear-gradient(45deg, #eee 25%, transparent 25%),
+      linear-gradient(-45deg, #eee 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, #eee 75%),
+      linear-gradient(-45deg, transparent 75%, #eee 75%);
+    background-size: 12px 12px;
+    background-position: 0 0, 0 6px, 6px -6px, -6px 0px;
+  }
+  .swatch-color-fill {
+    position: absolute; inset: 0;
+  }
+  .swatch-info {
+    padding: 8px 10px 10px;
+  }
+  .swatch-label {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #1E2B4A;
+    margin-bottom: 2px;
+  }
+  .swatch-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: #6B7280;
+    word-break: break-all;
+    line-height: 1.4;
+  }
+
+  .role-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: #F97318;
+    background: rgba(249,115,24,0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-top: 4px;
+  }
+
+  .divider-note {
+    background: #FFF6EE;
+    border: 1px solid #FBE0C6;
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 12.5px;
+    color: #1E2B4A;
+    margin-bottom: 24px;
+  }
+  .divider-note b { color: #F97318; }
+</style>
+</head>
+<body>
+
+<h1>fi<span>x</span>ora — Guía de color</h1>
+<p class="subtitle">Sistema técnico (light mode) · Sora / Plus Jakarta Sans / JetBrains Mono</p>
+
+<div class="divider-note">
+  <b>Tokens base compartidos</b> en todas las pantallas: fondo <code>#F7F8F8</code>, tarjetas <code>#FFFFFF</code>, texto principal <code>#1E2B4A</code> (navy), acento primario <code>#F97318</code> (naranja). El resto de esta guía muestra cómo se combinan por pantalla y por sección.
+</div>
+
+<!-- GLOBAL TOKENS -->
+<div class="screen-block">
+  <div class="screen-title"><span class="screen-num">•</span> Tokens globales (todas las pantallas)</div>
+
+  <div class="section">
+    <div class="section-title">Fondo &amp; superficies</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#F7F8F8;"></div><div class="swatch-info"><div class="swatch-label">Fondo de página</div><div class="swatch-value">#F7F8F8</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border-bottom:1px solid #E8EAEF;"></div><div class="swatch-info"><div class="swatch-label">Tarjeta / superficie</div><div class="swatch-value">#FFFFFF</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F7;"></div><div class="swatch-info"><div class="swatch-label">Superficie secundaria</div><div class="swatch-value">#F2F4F7</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E8EBF0;"></div><div class="swatch-info"><div class="swatch-label">Superficie terciaria (tracks)</div><div class="swatch-value">#E8EBF0</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E8EAEF;"></div><div class="swatch-info"><div class="swatch-label">Borde</div><div class="swatch-value">#E8EAEF</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#DCE0E8;"></div><div class="swatch-info"><div class="swatch-label">Borde fuerte</div><div class="swatch-value">#DCE0E8</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Texto</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#1E2B4A;"></div><div class="swatch-info"><div class="swatch-label">Texto principal / Navy</div><div class="swatch-value">#1E2B4A</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#6B7280;"></div><div class="swatch-info"><div class="swatch-label">Texto secundario</div><div class="swatch-value">#6B7280</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#9AA3B2;"></div><div class="swatch-info"><div class="swatch-label">Texto terciario / placeholder</div><div class="swatch-value">#9AA3B2</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Acentos semánticos</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#F97318;"></div><div class="swatch-info"><div class="swatch-label">Naranja / Primario</div><div class="swatch-value">#F97318</div><span class="role-tag">Marca</span></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(249,115,24,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Naranja — fondo tenue</div><div class="swatch-value">rgba(249,115,24,0.10)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1FAE6E;"></div><div class="swatch-info"><div class="swatch-label">Verde / Éxito</div><div class="swatch-value">#1FAE6E</div><span class="role-tag">Success</span></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(31,174,110,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Verde — fondo tenue</div><div class="swatch-value">rgba(31,174,110,0.10)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0453D;"></div><div class="swatch-info"><div class="swatch-label">Rojo / Coral / Peligro</div><div class="swatch-value">#F0453D</div><span class="role-tag">Danger</span></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(240,69,61,0.09);"></div></div><div class="swatch-info"><div class="swatch-label">Rojo — fondo tenue</div><div class="swatch-value">rgba(240,69,61,0.09)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F5A623;"></div><div class="swatch-info"><div class="swatch-label">Ámbar / Advertencia</div><div class="swatch-value">#F5A623</div><span class="role-tag">Warning</span></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(245,166,35,0.12);"></div></div><div class="swatch-info"><div class="swatch-label">Ámbar — fondo tenue</div><div class="swatch-value">rgba(245,166,35,0.12)</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Botones — degradados</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#F97318,#E85D04);"></div><div class="swatch-info"><div class="swatch-label">Botón primario (naranja)</div><div class="swatch-value">linear-gradient(135deg, #F97318, #E85D04)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#26C281,#189A66);"></div><div class="swatch-info"><div class="swatch-label">Botón aceptar / finalizar</div><div class="swatch-value">linear-gradient(135deg, #26C281, #189A66)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border:1.5px solid #F0453D66; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">Botón declinar (outline)</div><div class="swatch-value">bg #FFFFFF · borde rgba(240,69,61,0.35)</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 1 -->
+<div class="screen-block">
+  <div class="screen-title"><span class="screen-num">1</span> Detalles del servicio técnico</div>
+
+  <div class="section">
+    <div class="section-title">Etiquetas de categoría / urgencia</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(249,115,24,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Chip "Plomería" — fondo</div><div class="swatch-value">rgba(249,115,24,0.10)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F97318;"></div><div class="swatch-info"><div class="swatch-label">Chip "Plomería" — texto/ícono</div><div class="swatch-value">#F97318</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(240,69,61,0.09);"></div></div><div class="swatch-info"><div class="swatch-label">Chip "Urgente" — fondo</div><div class="swatch-value">rgba(240,69,61,0.09)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0453D;"></div><div class="swatch-info"><div class="swatch-label">Chip "Urgente" — texto/ícono</div><div class="swatch-value">#F0453D</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Tarjeta "Define tu cotización" (degradado)</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(165deg,#FFF6EE 0%, #FFFFFF 60%);"></div><div class="swatch-info"><div class="swatch-label">Fondo de tarjeta</div><div class="swatch-value">linear-gradient(165deg, #FFF6EE 0%, #FFFFFF 60%)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FBE0C6;"></div><div class="swatch-info"><div class="swatch-label">Borde de tarjeta</div><div class="swatch-value">#FBE0C6</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1E2B4A;"></div><div class="swatch-info"><div class="swatch-label">Valor "Mínimo"</div><div class="swatch-value">#1E2B4A</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F97318;"></div><div class="swatch-info"><div class="swatch-label">Valor "Máximo"</div><div class="swatch-value">#F97318</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0D9BF;"></div><div class="swatch-info"><div class="swatch-label">Track del slider (base)</div><div class="swatch-value">#F0D9BF</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(90deg,#F97318,#FFB020);"></div><div class="swatch-info"><div class="swatch-label">Track del slider (relleno)</div><div class="swatch-value">linear-gradient(90deg, #F97318, #FFB020)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border:4px solid #F97318; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">Handle izquierdo</div><div class="swatch-value">fondo #FFFFFF · borde #F97318 · halo rgba(249,115,24,0.13)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border:4px solid #E85D04; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">Handle derecho</div><div class="swatch-value">fondo #FFFFFF · borde #E85D04 · halo rgba(232,93,4,0.13)</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Fotos del problema</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F7;"></div><div class="swatch-info"><div class="swatch-label">Miniatura vacía</div><div class="swatch-value">#F2F4F7</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(249,115,24,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Chip "+2" restantes</div><div class="swatch-value">rgba(249,115,24,0.10) · texto #F97318</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 2 -->
+<div class="screen-block">
+  <div class="screen-title"><span class="screen-num">2</span> Imágenes amplias</div>
+
+  <div class="section">
+    <div class="section-title">Galería</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F7;"></div><div class="swatch-info"><div class="swatch-label">Celda de foto</div><div class="swatch-value">#F2F4F7</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#DCE0E8;"></div><div class="swatch-info"><div class="swatch-label">Borde de celda</div><div class="swatch-value">#DCE0E8</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(255,255,255,0.75);"></div></div><div class="swatch-info"><div class="swatch-label">Badge numeración</div><div class="swatch-value">rgba(255,255,255,0.75) + blur</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border:1px solid #DCE0E8; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">Botón de zoom</div><div class="swatch-value">#FFFFFF · sombra rgba(30,43,74,0.08)</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Nota informativa (inferior)</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(249,115,24,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Fondo</div><div class="swatch-value">rgba(249,115,24,0.10)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FBE0C6;"></div><div class="swatch-info"><div class="swatch-label">Borde</div><div class="swatch-value">#FBE0C6</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F97318;"></div><div class="swatch-info"><div class="swatch-label">Ícono</div><div class="swatch-value">#F97318</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 3 -->
+<div class="screen-block">
+  <div class="screen-title"><span class="screen-num">3</span> Finalizar servicio</div>
+
+  <div class="section">
+    <div class="section-title">Tarjeta de tiempo — íconos por fila</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(31,174,110,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Hora de inicio — fondo ícono</div><div class="swatch-value">rgba(31,174,110,0.10)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1FAE6E;"></div><div class="swatch-info"><div class="swatch-label">Hora de inicio — ícono</div><div class="swatch-value">#1FAE6E</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(249,115,24,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Hora de término — fondo ícono</div><div class="swatch-value">rgba(249,115,24,0.10)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F97318;"></div><div class="swatch-info"><div class="swatch-label">Hora de término — ícono + badge AUTO</div><div class="swatch-value">#F97318</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(245,166,35,0.12);"></div></div><div class="swatch-info"><div class="swatch-label">Duración — fondo ícono</div><div class="swatch-value">rgba(245,166,35,0.12)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F5A623;"></div><div class="swatch-info"><div class="swatch-label">Duración — ícono</div><div class="swatch-value">#F5A623</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Comentarios &amp; fotos del resultado</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F7;"></div><div class="swatch-info"><div class="swatch-label">Caja de texto</div><div class="swatch-value">#F2F4F7</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F7; border:1.5px dashed #F9731873; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">Botón agregar foto</div><div class="swatch-value">fondo rgba(249,115,24,0.10) · borde punteado rgba(249,115,24,0.45)</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Botón principal</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#26C281,#189A66);"></div><div class="swatch-info"><div class="swatch-label">"Finalizar servicio"</div><div class="swatch-value">linear-gradient(135deg, #26C281, #189A66)</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 4 -->
+<div class="screen-block">
+  <div class="screen-title"><span class="screen-num">4</span> Estatus</div>
+
+  <div class="section">
+    <div class="section-title">Tarjeta de cliente</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#F97318,#FFB020);"></div><div class="swatch-info"><div class="swatch-label">Avatar cliente</div><div class="swatch-value">linear-gradient(135deg, #F97318, #FFB020)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#F97318,#E85D04);"></div><div class="swatch-info"><div class="swatch-label">Botón chat</div><div class="swatch-value">linear-gradient(135deg, #F97318, #E85D04)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1FAE6E;"></div><div class="swatch-info"><div class="swatch-label">Punto "Notificado"</div><div class="swatch-value">#1FAE6E</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Barra de progreso &amp; stepper vertical</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(90deg,#1FAE6E,#F97318);"></div><div class="swatch-info"><div class="swatch-label">Segmentos completados</div><div class="swatch-value">linear-gradient(90deg, #1FAE6E, #F97318)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#E8EBF0;"></div><div class="swatch-info"><div class="swatch-label">Segmentos pendientes</div><div class="swatch-value">#E8EBF0</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(31,174,110,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Paso completado — fondo</div><div class="swatch-value">rgba(31,174,110,0.10) · borde #1FAE6E</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(249,115,24,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Paso activo — fondo</div><div class="swatch-value">rgba(249,115,24,0.10) · borde #F97318</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F7; border:1px solid #DCE0E8; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">Paso pendiente — fondo</div><div class="swatch-value">#F2F4F7 · borde #DCE0E8</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Indicador en vivo — "Jose está realizando la prueba"</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(249,115,24,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Fondo de tarjeta</div><div class="swatch-value">rgba(249,115,24,0.10)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FBDBB8;"></div><div class="swatch-info"><div class="swatch-label">Borde de tarjeta</div><div class="swatch-value">#FBDBB8</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F97318;"></div><div class="swatch-info"><div class="swatch-label">Texto / punto de pulso</div><div class="swatch-value">#F97318</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 5 -->
+<div class="screen-block">
+  <div class="screen-title"><span class="screen-num">5</span> Esperando respuesta</div>
+
+  <div class="section">
+    <div class="section-title">Panel "hero" (oscuro — único elemento dark de la pantalla)</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:radial-gradient(120% 100% at 50% 0%, #24304F 0%, #141B2E 70%);"></div><div class="swatch-info"><div class="swatch-label">Fondo del panel</div><div class="swatch-value">radial-gradient(120% 100% at 50% 0%, #24304F 0%, #141B2E 70%)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#1E2B4A;"></div><div class="swatch-info"><div class="swatch-label">Borde del panel</div><div class="swatch-value">#1E2B4A</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(249,115,24,0.18);"></div></div><div class="swatch-info"><div class="swatch-label">Pill "Buscando confirmación" — fondo</div><div class="swatch-value">rgba(249,115,24,0.18)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFB020;"></div><div class="swatch-info"><div class="swatch-label">Pill / anillos / puntos — acento</div><div class="swatch-value">#FFB020</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(255,255,255,0.08);"></div></div><div class="swatch-info"><div class="swatch-label">Badge del cronómetro — fondo</div><div class="swatch-value">rgba(255,255,255,0.08)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#F97318,#FFB020);"></div><div class="swatch-info"><div class="swatch-label">Avatar central (técnico notificado)</div><div class="swatch-value">linear-gradient(135deg, #F97318, #FFB020)</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Stepper horizontal</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#1FAE6E;"></div><div class="swatch-info"><div class="swatch-label">Paso completado</div><div class="swatch-value">#1FAE6E</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F97318;"></div><div class="swatch-info"><div class="swatch-label">Paso activo</div><div class="swatch-value">#F97318</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F7; border:1px solid #DCE0E8; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">Paso pendiente</div><div class="swatch-value">#F2F4F7 · borde #DCE0E8</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Tarjeta de cliente &amp; tip de conversión</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:linear-gradient(135deg,#FF9A5C,#F0453D);"></div><div class="swatch-info"><div class="swatch-label">Avatar del cliente</div><div class="swatch-value">linear-gradient(135deg, #FF9A5C, #F0453D)</div></div></div>
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(31,174,110,0.10);"></div></div><div class="swatch-info"><div class="swatch-label">Tarjeta tip — fondo</div><div class="swatch-value">rgba(31,174,110,0.10)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#BFE9D6;"></div><div class="swatch-info"><div class="swatch-label">Tarjeta tip — borde</div><div class="swatch-value">#BFE9D6</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0453D;"></div><div class="swatch-info"><div class="swatch-label">Enlace "Cancelar cotización"</div><div class="swatch-value">#F0453D</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 5b -->
+<div class="screen-block">
+  <div class="screen-title"><span class="screen-num">5b</span> Modal — Cancelar cotización</div>
+
+  <div class="section">
+    <div class="section-title">Fondo &amp; hoja inferior</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(30,43,74,0.45);"></div></div><div class="swatch-info"><div class="swatch-label">Scrim (fondo oscurecido)</div><div class="swatch-value">rgba(30,43,74,0.45) + blur</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#FFFFFF; border:1px solid #DCE0E8; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">Hoja (bottom sheet)</div><div class="swatch-value">#FFFFFF · sombra rgba(30,43,74,0.18)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#DCE0E8;"></div><div class="swatch-info"><div class="swatch-label">Handle de la hoja</div><div class="swatch-value">#DCE0E8</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Alertas &amp; desglose</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color checker"><div class="swatch-color-fill" style="background:rgba(240,69,61,0.09);"></div></div><div class="swatch-info"><div class="swatch-label">Ícono de advertencia — fondo</div><div class="swatch-value">rgba(240,69,61,0.09)</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0453D;"></div><div class="swatch-info"><div class="swatch-label">Ícono / texto de alerta</div><div class="swatch-value">#F0453D</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F8C9C6;"></div><div class="swatch-info"><div class="swatch-label">Borde de alerta</div><div class="swatch-value">#F8C9C6</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0453D;"></div><div class="swatch-info"><div class="swatch-label">"Cargo por cancelación" (total)</div><div class="swatch-value">#F0453D</div></div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">Botones</div>
+    <div class="swatch-grid">
+      <div class="swatch"><div class="swatch-color" style="background:#F2F4F7; border:1px solid #DCE0E8; box-sizing:border-box;"></div><div class="swatch-info"><div class="swatch-label">"Mantener solicitud"</div><div class="swatch-value">#F2F4F7 · borde #DCE0E8 · texto #1E2B4A</div></div></div>
+      <div class="swatch"><div class="swatch-color" style="background:#F0453D;"></div><div class="swatch-info"><div class="swatch-label">"Sí, cancelar de todos modos"</div><div class="swatch-value">#F0453D (texto)</div></div></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
